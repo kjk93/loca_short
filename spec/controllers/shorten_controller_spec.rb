@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe ShortenController do
 
-  describe "GET 'new'" do
+  describe "GET 'home'" do
     it "returns http success" do
-      get 'new'
+      get 'home'
       response.should be_success
     end
   end

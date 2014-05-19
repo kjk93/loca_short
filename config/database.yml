@@ -8,6 +8,8 @@ development:
   database: short_dev
   pool: 5
   timeout: 5000
+  username: postgres
+  password: password
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,9 +19,13 @@ test:
   database: short_test
   pool: 5
   timeout: 5000
+  username: postgres
+  password: password
 
 production:
   adapter: postgresql
   database: short_production
   pool: 5
   timeout: 5000
+  username: postgres
+  password: password

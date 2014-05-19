@@ -1,0 +1,39 @@
+@import "bootstrap";
+
+html{
+	overflow-y: scroll;
+}
+
+body{
+	padding-top: 20px;
+}
+
+section{
+	overflow: auto;
+}
+
+textarea{
+	resize: veritcal;
+}
+
+.center{
+	text-align: center;
+}
+
+p{
+	font-size: 1.1em;
+	line-height: 1.7em;
+}
+
+/*forms*/
+input, textarea, select, .uneditable-input{
+	border: 1px solid #bbb;
+	width: 105%;
+	margin-bottom: 15px;
+
+	
+}
+
+input{
+	height: auto !important;
+}
