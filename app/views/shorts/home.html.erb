@@ -1,0 +1,17 @@
+<% provide(:title, 'Home') %>
+<div class="row">
+	<div class="col-md-5 col-md-offset-4">
+		<h3>Enter any URL you want to shorten</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<%= form_for(@short) do |short|%>
+			<%= short.text_field :original %>
+
+			<div class="col-md-5 col-md-offset-4">
+				<%= short.submit "Shorten URL", class: "btn btn-primary" %>
+			</div>
+		<%end%>
+	</div>
+</div>
