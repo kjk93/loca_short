@@ -20,9 +20,35 @@ textarea{
 	text-align: center;
 }
 
+.btn{
+	margin-top: 20px;
+}
+
 p{
 	font-size: 1.1em;
 	line-height: 1.7em;
+}
+
+/*Typography*/
+#url{
+	color:#3385FF;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-color: #E8E8E8;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 107%;
+}
+
+/*header*/
+#home{
+	text-decoration: none;
+	color: #3385FF;
+	font-weight: 900;
+	&:hover{
+		color: #3385FF;
+		text-decoration: none;
+	}
 }
 
 /*forms*/

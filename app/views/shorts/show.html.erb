@@ -1,12 +1,17 @@
 <% provide(:title, @short.original) %>
 <div class="row">
-	<div class="col-md-5 col-md-offset-4">
-		<h3>Your new URL is</h3>
-		<div class="row">
-			<h2><%= @short.short %></h2>
-		</div>
-		<div class="row">
-			<h4>Copy and paste this URL for your browser</h4>
+	<div class="col-md-4 col-md-offset-4">
+		<div class="center">
+			<h3>Your new URL is</h3>
+			<div class="row">
+				<h2 id="url">http://localhost:3000/<%= @short.short %></h2>
+			</div>
+			<div class="row">
+				<h4>Copy and paste this URL for your browser</h4>
+			</div>
+			<div class="row">
+				<%= link_to "Create another URL", root_path, class: "btn btn-primary" %>
+			</div>
 		</div>
 	</div>
 </div>
