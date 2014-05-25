@@ -1,8 +1,8 @@
 LocaShort::Application.routes.draw do
-  resources :shorts, except: :show
+  resources :shorts
 
   root 'shorts#home'
-  get ':short', to: 'shorts#show'
+  get ':short', to: 'shorts#redirect'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

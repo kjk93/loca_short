@@ -4,17 +4,21 @@ class ShortsController < ApplicationController
   end
 
   def show
-  	@short = Short.find(params[:short])
+  	@short = Short.find(params[:id])
   end
 
   def create
   	hashvalue = urlhash
-  	@short = Short.new(short: hashvalue)
+  	@short = Short.new(params.require(:short).permit(:original))
+  	@short.short = hashvalue
   	if Short.find_by(original: @short.original)
-  		render 'show'
+  		@short = Short.find_by(original: @short.original)
+  		@message = "The first part of if statement"
+  		redirect_to @short
   	else
+  		@message = "The second if"
 	  	if @short.save
-	  		render 'show'
+	  		redirect_to @short
 	  	else
 	  		render 'error'
 	  	end
@@ -22,6 +26,8 @@ class ShortsController < ApplicationController
   end
 
   def redirect 
+  	@short = Short.find_by(short: params[:short])
+  	redirect_to(@short.original)
   end
 
   def error
