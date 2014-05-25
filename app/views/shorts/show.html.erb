@@ -4,7 +4,7 @@
 		<div class="center">
 			<h3>Your new URL is</h3>
 			<div class="row">
-				<% if Rail.env.production? %>
+				<% if Rails.env.production? %>
 					<h2 id="url">http://loca-url.herokuapp.com/<%= @short.short %></h2>
 				<% else %>
 					<h2 id="url">http://localhost:3000/<%= @short.short %></h2>
