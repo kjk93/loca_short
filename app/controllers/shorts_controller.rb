@@ -28,11 +28,19 @@ class ShortsController < ApplicationController
   def redirect 
   	@short = Short.find_by(short: params[:short])
     url = @short.original
-    urlCheck = @short.original.each_char.to_a
-    if (urlCheck[0..6] <=> ["h", "t", "t", "p", ":", "/", "/"])
-      url = "http://#{@short.original}"
+    @urlCheck = @short.original.each_char.to_a
+    @result = false
+    if (!(@urlCheck[0..7] == ["h", "t", "t", "p", "s", ":", "/", "/"]))
+      if (@urlCheck[0..6] == ["h", "t", "t", "p", ":", "/", "/"])
+        redirect_to(url)
+        return
+      else
+      url = "http://#{url}"
+      redirect_to(url)
+      return
+      end
     end
-  	redirect_to(url)
+    redirect_to(url)
   end
 
   def error
